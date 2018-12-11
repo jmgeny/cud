@@ -4,15 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <h3>Administrador Principal</h3>
             <div class="card">
                 <div class="card-header">
                     <div class="links">
-                        <a href="{{ url('/discapacidad') }}">Discapacidades</a>
-{{--                         <a href="https://laracasts.com">Actualizacion</a>
-                        <a href="https://laravel-news.com">Consulta</a>
-                        <a href="https://nova.laravel.com">Nova</a>
-                        <a href="https://forge.laravel.com">Forge</a>
-                        <a href="https://github.com/laravel/laravel">GitHub</a> --}}
+                        <a href="{{ url('/discapacidad') }}" class="btn btn-primary">Discapacidades</a>
+                        <a href="{{ url('/person') }}" class="btn btn-primary">Personas</a>
                     </div>
                 </div>
 
@@ -22,9 +19,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    
                 </div>
+                
             </div>
         </div>
     </div>

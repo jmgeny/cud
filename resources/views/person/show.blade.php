@@ -6,17 +6,12 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <div class="links">
-                        <a href="{{ url('/discapacidad') }}">Discapacidades</a>
-                    </div>
+<h1>Person SHOW card-header</h1>
                 </div>
 
                 <div class="card-body">
                     
-                @foreach($discas as $disca)
-                    {{ $disca->nombre }}<br>
-                @endforeach    
-                    
+                {{ $disca->apellido }}
                 </div>
             </div>
         </div>

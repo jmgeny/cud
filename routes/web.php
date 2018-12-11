@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('discapacidad','DiscapacidadController');
+Route::resources([
+	'discapacidad' 	=> 'DiscapacidadController', 
+	'person' 		=> 'PersonController'
+]);
+
 
 Auth::routes();
 
