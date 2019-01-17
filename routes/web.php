@@ -15,12 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resources([
-	'discapacidad' 	=> 'DiscapacidadController', 
-	'person' 		=> 'PersonController'
-]);
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('person','PersonController');

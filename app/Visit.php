@@ -1,10 +1,10 @@
 <?php
 
-namespace syscud;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Discapacidad extends Model
+class Visit extends Model
 {
     //
 }

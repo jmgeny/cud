@@ -1,9 +1,8 @@
 <?php
 
-namespace syscud\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use syscud\Person;
 
 class PersonController extends Controller
 {
@@ -14,8 +13,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $discas = Person::orderBy('id','DES')->paginate(2);
-        return view('person.index', compact('discas'));
+        return view('person.index');
     }
 
     /**
@@ -47,9 +45,7 @@ class PersonController extends Controller
      */
     public function show($id)
     {
-        $disca = Person::find($id);
-
-        return view('person.show',compact('disca'));
+        //
     }
 
     /**
@@ -60,9 +56,7 @@ class PersonController extends Controller
      */
     public function edit($id)
     {
-        $disca = Person::find($id);
-
-        return view('person.edit',compact('disca'));
+        //
     }
 
     /**
@@ -85,10 +79,6 @@ class PersonController extends Controller
      */
     public function destroy($id)
     {
-        $person = Person::findOrFail($id);
-        $person->status='0';
-        $person->update();
-        
-        return back();
+        //
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVisitasTable extends Migration
+class CreateVisitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateVisitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('visitas', function (Blueprint $table) {
+        Schema::create('visits', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('person_id');// persona
-            $table->date('fecha');
-            $table->text('descripcion'); // descripcion de la vicita
             $table->timestamps();
-
-            $table->foreign('person_id')->references('id')->on('people');
         });
     }
 
@@ -31,6 +26,6 @@ class CreateVisitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visitas');
+        Schema::dropIfExists('visits');
     }
 }

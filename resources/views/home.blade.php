@@ -4,14 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h3>Administrador Principal</h3>
             <div class="card">
-                <div class="card-header">
-                    <div class="links">
-                        <a href="{{ url('/discapacidad') }}" class="btn btn-primary">Discapacidades</a>
-                        <a href="{{ url('/person') }}" class="btn btn-primary">Personas</a>
-                    </div>
-                </div>
+                <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -19,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    You are logged in!
                 </div>
-                
             </div>
         </div>
     </div>
