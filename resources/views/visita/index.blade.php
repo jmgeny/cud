@@ -1,6 +1,6 @@
 @extends('layouts.principal')
 
-@section('title','Personas')
+@section('title','Visitas')
 
 @section('sidebar')
 @parent
@@ -11,7 +11,7 @@
 <section class="container table-responsive emp-profile">
 	<div class="row">
 		<div class="col-lg-10">
-			<h3>Personas</h3>
+			<h3>Visitas</h3>
 		</div>
 		<div class="col-lg-2">
 			<a href="{{ route('person.create') }}" class="btn btn-primary profile-edit-btn">Nuevo</a>

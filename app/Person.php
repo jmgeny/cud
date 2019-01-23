@@ -1,10 +1,24 @@
 <?php
 
-namespace App;
+namespace cud;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-    //
+    public function trabajo() {
+    	return $this->belongsTo(Trabajo::class);
+    }
+
+    public function obrasocial(){
+    	return $this->belongsTo(Obrasocial::class);
+    }
+
+    public function discapacidad() {
+    	return $this->belongsTo(Disca::class);
+    }
+
+    public function estudio() {
+    	return $this->belongsTo(Estudio::class);
+    }
 }

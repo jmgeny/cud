@@ -4,7 +4,7 @@ namespace cud;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Visit extends Model
+class Tipodisca extends Model
 {
     //
 }
