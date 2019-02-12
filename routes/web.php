@@ -12,12 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('person','PersonController');
-Route::resource('visit','VisitController');
+Route::middleware('auth')->group(function(){
+	Route::resources([
+		'person' => 'PersonController',
+		'visit'  => 'VisitController'
+	]);
+});

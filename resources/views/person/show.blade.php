@@ -7,7 +7,7 @@
 <section class="container emp-profile">
 	<div class="row">
 		<div class="col-md-4">
-			<h3>Ver persona</h3>
+			<a href="{{ route('person.index') }}" class="btn btn-primary mb-2">Regresar</a>
 			<div class="profile-img">
 				<img src="{{ Storage::url($person->avatar) }}" alt=""/>
 			</div>
@@ -32,10 +32,10 @@
 			</div>
 		</div>
 		<div class="col-md-2">
-			<a href="{{ route('person.index') }}" class="btn btn-primary profile-edit-btn">Listar</a>
+			<a href="{{ route('visit.show',$person->id) }}" class="btn btn-primary profile-edit-btn">Visitas</a>
 		</div>
 		<div class="col-md-2">
-			<a href="{{ route('person.edit',$person->id) }}" class="btn btn-primary profile-edit-btn">Edit</a>
+			<a href="{{ route('person.edit',$person->id) }}" class="btn btn-primary profile-edit-btn">Edit Perfil</a>
 		</div>
 	</div>
 	<div class="row">

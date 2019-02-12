@@ -17,7 +17,7 @@ class CreateVisitsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('person_id');
             $table->date('fecha');
-            $table->string('tutulo');
+            $table->string('titulo');
             $table->mediumText('descripcion');
             $table->timestamps();
 

@@ -4,6 +4,7 @@ namespace cud\Http\Controllers;
 
 use Illuminate\Http\Request;
 use cud\Person;
+use cud\Visit;
 
 class VisitController extends Controller
 {
@@ -15,7 +16,7 @@ class VisitController extends Controller
     public function index()
     {
         $persons = Person::orderBy('id','desc')->paginate(20);
-        return view('visita.index', compact('persons'));
+        return view('visit.index', compact('persons'));
     }
 
     /**
@@ -23,9 +24,10 @@ class VisitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+
+        return view('visit.create');
     }
 
     /**
@@ -47,7 +49,11 @@ class VisitController extends Controller
      */
     public function show($id)
     {
-        //
+        $person = Person::findOrFail($id);
+        $visits = Visit::where('person_id',$id)
+                        ->orderBy('fecha','desc')->get();
+        
+        return view('visit.show', ['person'=>$person, 'visits'=> $visits]);
     }
 
     /**
@@ -58,7 +64,9 @@ class VisitController extends Controller
      */
     public function edit($id)
     {
-        //
+        $person = Person::findOrFail($id);
+
+        return view('visit.edit',compact('person'));
     }
 
     /**
@@ -70,7 +78,18 @@ class VisitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $visit = new Visit;
+        $fechaSistema = new \DateTime();
+
+        $visit->person_id = $id;
+        $visit->titulo = $request->titulo;
+        $visit->descripcion = $request->descripcion;
+        $visit->fecha = $fechaSistema;
+
+        $visit->save();
+
+        return redirect()->route('visit.show',$id);
+
     }
 
     /**

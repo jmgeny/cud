@@ -21,4 +21,9 @@ class Person extends Model
     public function estudio() {
     	return $this->belongsTo(Estudio::class);
     }
+
+    public function visits() {
+        return $this->hasMany(Visit::class);
+    }
+
 }
