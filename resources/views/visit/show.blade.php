@@ -21,8 +21,8 @@
 		</div>		
 	</div>
 	<div class="row">
-		<div class="col-lg-12">
-
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
 			@foreach($visits as $visit)
 			<div class="card">
 				<div class="card-header bg-primary">{{ $visit->titulo }} {{ $visit->fecha }}</div>
@@ -31,6 +31,7 @@
 			<br>
 			@endforeach
 		</div>
+		<div class="col-lg-2"></div>
 	</div>
 </section>
 @endsection

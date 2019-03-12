@@ -22,14 +22,14 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
 			{!! Form::model($person,['route'=>['person.update',$person->id], 'method'=>'PUT', 'files'=>'true' ]) !!}
 			@include('person.parcial.formEdit')
 			{!! Form::close() !!}
 		
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-md-1"></div>
 	</div>
 
 </section>	

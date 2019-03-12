@@ -31,6 +31,7 @@
 						<th>Ver</th>
 						<th>Editar</th>
 						<th>Eliminar</th>
+						<th>visitas</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -42,12 +43,14 @@
 						<td>{{ $person->email }}</td>
 						<td><a href="{{ route('person.show',$person->id) }}"><button class="btn btn-primary">Ver</button></a></td>
 						<td><a href="{{ route('person.edit',$person->id) }}"><button class="btn btn-warning">Editar</button></a></td>
+						<td><a href="{{ route('visit.show',$person->id) }}"><button class="btn btn-primary">Ver actividad</button></a></td>
 						<td>
 							@if($person->status === '1')
 								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-{{ $person->id }}">Eliminar</button>
 							@endif
 						</td>
 					</tr>
+
 					@include('person.parcial.modal')
 					@endforeach
 
